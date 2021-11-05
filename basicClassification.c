@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include "NumClass.h"
 
 int isPrime(int n)
 {
@@ -30,9 +31,9 @@ int isPrime(int n)
         temp--;
     }
     return 0;
+
+   
 }
-
-
 
 int isStrong(int n)
 {
@@ -66,5 +67,3 @@ int isStrong(int n)
     }
     return 0;
 }
-
-
