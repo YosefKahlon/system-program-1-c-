@@ -1,7 +1,7 @@
 CC=gcc
 AR=ar
-# OBJECT_MAIN=main.o
-# OBJECT_LIB=NumClass.o
+OBJECT_MAIN=main.o
+OBJECT_LIB=NumClass.o
 FLAGS= -Wall -g   
 
 all: loopd recursived loops recursives  mains maindloop maindrec 
@@ -10,10 +10,10 @@ all: loopd recursived loops recursives  mains maindloop maindrec
 mains: main.o libclassrec.a #make mains
 	$(CC) $(FLAGS) -o mains main.o libclassrec.a -lm
 
-maindloop:main.o  #make maindloop
+maindloop: main.o  #make maindloop
 	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so -lm
 
-maindrec:main.o #make maindrec
+maindrec: main.o #make maindrec
 	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so -lm
 
  
