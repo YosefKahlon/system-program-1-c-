@@ -79,4 +79,3 @@ int isArmstrong(int n)
         return FALSE;
     }
 }
-
