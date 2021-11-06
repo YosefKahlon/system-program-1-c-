@@ -1,39 +1,40 @@
 #include <stdio.h>
 #include <math.h>
-#include "NumClass.h"
+#define TRUE 1
+#define FALSE 0
 
 int isPrime(int n)
 {
     if (n == 1)
     {
-        return 1;
+        return TRUE;
     }
     if (n == 2)
     {
-        return 1;
+        return TRUE;
     }
     if (n % 2 == 0)
     {
-        return 0;
+        return FALSE;
     }
     int temp = n - 1;
     while (temp > 0)
     {
         if (temp == 1)
         {
-            return 1;
+            return TRUE;
         }
         if (n % temp == 0)
         {
-            return 0;
+            return FALSE;
         }
 
         temp--;
     }
-    return 0;
-
-   
+    return FALSE;
 }
+
+
 
 int isStrong(int n)
 {
@@ -63,7 +64,9 @@ int isStrong(int n)
 
     if (sum == n)
     {
-        return 1;
+        return TRUE;
     }
-    return 0;
+    return FALSE;
 }
+
+

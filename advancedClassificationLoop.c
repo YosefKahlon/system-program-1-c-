@@ -1,27 +1,31 @@
 #include <stdio.h>
 #include <math.h>
-
+#define TRUE 1
+#define FALSE 0
 int isPalindrome(int n)
 {
+    if(-10<n && n<10){
+        return TRUE;
+    }
 
-    int revrseNum, temp, ans;
-
-    while (n != 0)
+    int revrseNum=0, temp=0;
+     int m=n;
+    while (m > 0)
     {
-        temp = n % 10;
-        revrseNum = revrseNum * 10 + temp;
-        n = n / 10;
+        temp = m % 10;
+        revrseNum = (revrseNum * 10) + temp;
+        m = m / 10;
     }
 
     if (n == revrseNum)
     {
-        ans = 1;
+        return TRUE;
     }
     else
     {
-        ans = 0;
+        return FALSE;
     }
-    return ans;
+    return FALSE;
 }
 
 int isArmstrong(int n)
@@ -37,18 +41,19 @@ int isArmstrong(int n)
         temp = temp / 10;
     }
 
-    temp = n;
+   int n2=n;
 
-    while (checkSum > 0)
+    while (n2 > 0)
     {
         temp = checkSum % 10;
-        sum += pow(temp, digit);
-        checkSum = checkSum / 10;
+        sum =sum+pow(temp, digit);
+        checkSum = n2 / 10;
+        n2=n2/10;
     }
 
     if (sum == n)
     {
-        return 1;
+        return TRUE;
     }
-    return 0;
+    return FALSE;
 }
