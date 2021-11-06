@@ -39,11 +39,13 @@ int isArmstrong(int n)
 
     temp = n;
 
+   int n2=n;
+
     while (checkSum > 0)
     {
         temp = checkSum % 10;
-        sum += pow(temp, digit);
-        checkSum = checkSum / 10;
+        sum =sum+pow(temp, digit);
+        checkSum = n2 / 10;
     }
 
     if (sum == n)
