@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <math.h>
-
+#define  TRUE 1
+#define  FALSE 0
 int isPalindrome(int n)
 {
 
-    if (n == 0)
+    if (-10<n && n<10)
     {
-        return 1;
+        return TRUE;
     }
     int digit = 0;
     int temp = n;
@@ -39,11 +40,11 @@ int isPalindrome(int n)
         }
         else
         {
-            return 0;
+            return FALSE;
         }
     }
 
-    return 0;
+    return FALSE;
 }
 
 int digit(int n)
@@ -62,7 +63,7 @@ int isArmstronghelp(int n, int digit)
 
         return (pow(n % 10, digit) + isArmstronghelp(n / 10, digit));
     }
-    return 0;
+    return FALSE;
 }
 int isArmstrong(int n)
 {
@@ -71,10 +72,11 @@ int isArmstrong(int n)
 
     if (isArmstronghelp(n, digi) == n)
     {
-        return 1;
+        return TRUE;
     }
     else
     {
-        return 0;
+        return FALSE;
     }
 }
+
