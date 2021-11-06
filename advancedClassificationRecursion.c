@@ -1,6 +1,51 @@
 #include <stdio.h>
 #include <math.h>
 
+int isPalindrome(int n)
+{
+
+    if (n == 0)
+    {
+        return 1;
+    }
+    int digit = 0;
+    int temp = n;
+    int digitt = 0;
+    int tempp = 0;
+    while (n > 0)
+    {
+        digit++;
+        n = n / 10;
+    }
+
+    n = temp;
+    int left = n % 10;
+    int right = n / pow(10, digit - 1);
+    if (left == right)
+    {
+
+        temp = n - (n % 10) * pow(10, digit - 1);
+        temp = temp / 10;
+        tempp = temp;
+
+        while (tempp > 0)
+        {
+            digitt++;
+            tempp = tempp / 10;
+        }
+        if (digit - 2 == digitt)
+        {
+            return isPalindrome(temp);
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    return 0;
+}
+
 int digit(int n)
 {
     if (n < 10 && n > -10)
@@ -9,27 +54,6 @@ int digit(int n)
     }
     return 1 + digit(n / 10);
 }
-
-int reverse(int n)
-{
-    int digi = digit(n);
-    if (n == 0)
-    {
-        return 0;
-    }
-    return (n % 10 * pow(10, digi) + reverse(n / 10));
-}
-
-int isPalindrome(int n)
-{
-    if (n == reverse(n))
-    {
-        return 1;
-    }
-
-    return 0;
-}
-
 int isArmstronghelp(int n, int digit)
 {
 
